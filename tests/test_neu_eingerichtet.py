@@ -19,4 +19,5 @@ with start(state=leer) as T:
     T.shot('neu_auswertung.png')
     txt = J("document.querySelector('#main').innerText")
     ok('Auswertung ohne Gerichtnamen', not any(n in txt for n in ('Brotzeit', 'Chili', 'Bandnudeln')), txt[:300])
+    ok('Hinweis ohne Rezepte', 'Noch keine Rezepte angelegt.' in txt and 'Alle Rezepte wurden' not in txt)
     ok('Keine JS-Fehler', not errs, errs[:5])

@@ -125,6 +125,10 @@ Aufbau wie in der Merker-App: oben eine Statuskarte (Verbindung, Home-Assistant-
 
 Neueste Version oben. Bei jeder Änderung einen neuen Abschnitt "### Version x.y.z" direkt unter dieser Zeile einfügen.
 
+### Version 1.9.3
+
+- Auswertung: Ohne Rezepte steht bei „Lange nicht gekocht“ jetzt „Noch keine Rezepte angelegt.“ statt eines falschen Hinweises.
+
 ### Version 1.9.2
 
 - Freie Einträge: Ein Tipp auf einen Namen bietet drei Wege an: neues Gericht anlegen, mit einem vorhandenen Gericht verknüpfen oder ignorieren.

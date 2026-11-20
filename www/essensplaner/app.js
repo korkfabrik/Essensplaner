@@ -1010,7 +1010,7 @@
     const langHtml = lang.length
       ? '<div class="list">' + lang.map((r) => '<div class="row"><span class="main"><b>' + esc(r.name) + '</b><span class="sub">' + esc(agoText(lm[r.uid])) + '</span></span>' +
         '<button class="btn soft" data-a="plan" data-uid="' + esc(r.uid) + '" style="min-height:40px">Einplanen</button></div>').join('') + '</div>'
-      : '<div class="list"><div class="empty">Alle Rezepte wurden in den letzten 30 Tagen gekocht.</div></div>';
+      : '<div class="list"><div class="empty">' + (S.recipes.length ? 'Alle Rezepte wurden in den letzten 30 Tagen gekocht.' : 'Noch keine Rezepte angelegt.') + '</div></div>';
 
     const katCount = {};
     const aufCount = {};
