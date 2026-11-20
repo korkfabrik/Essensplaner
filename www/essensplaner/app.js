@@ -1056,6 +1056,8 @@
   function patchConfig(fn, quiet) {
     if (!needOnline()) return Promise.resolve(false);
     cfgChain = cfgChain.then(async () => {
+      // Erst den aktuellen Stand aus HA holen, sonst überschreibt ein Gerät die Änderungen eines anderen
+      await loadConfig();
       const c = clone(S.config);
       if (fn(c) === false) return false;
       if (!c.kategorien.length || !c.kuechen.length || !c.einheiten.length) { toast('Mindestens ein Eintrag muss bleiben', true); return false; }
@@ -1415,11 +1417,22 @@
     const runId = 'f' + Date.now().toString(36);
     const plan = sh.plan.slice();
     let n = 0;
-    for (const p of plan) {
-      const meta = { v: 1, gericht_uid: p.gericht_uid || null, slot: sh.slot, status: 'geplant', portionen: (p.a && p.a.portionen) || S.config.standard_portionen, notiz: (p.a && p.a.notiz) || '', auto: runId };
-      if (p.ablageId && p.a.eingekauft) meta.eingekauft = true;
-      await writeEvent({ date: p.date, slot: sh.slot, name: p.name, meta: meta });
-      n++;
+    try {
+      for (const p of plan) {
+        const meta = { v: 1, gericht_uid: p.gericht_uid || null, slot: sh.slot, status: 'geplant', portionen: (p.a && p.a.portionen) || S.config.standard_portionen, notiz: (p.a && p.a.notiz) || '', auto: runId };
+        if (p.ablageId && p.a.eingekauft) meta.eingekauft = true;
+        await writeEvent({ date: p.date, slot: sh.slot, name: p.name, meta: meta });
+        n++;
+      }
+    } catch (e) {
+      // Abbruch mittendrin: Ablage bleibt unverändert, schon angelegte Abende lassen sich entfernen
+      try { await loadEvents(); } catch (e2) { /* ignorieren */ }
+      closeSheet();
+      render();
+      const msg = 'Woche füllen abgebrochen' + (n ? ' nach ' + n + (n === 1 ? ' Abend' : ' Abenden') : '') + ': ' + e.message;
+      if (n) toast(msg, { err: true, action: 'Entfernen', duration: 15000, onAction: () => run(() => undoFill(runId, [])) });
+      else toast(msg, true);
+      return;
     }
     const ids = plan.filter((p) => p.ablageId).map((p) => p.ablageId);
     if (ids.length) await patchConfig((c) => { c.ablage = (c.ablage || []).filter((a) => ids.indexOf(a.id) < 0); }, true);
@@ -1453,7 +1466,7 @@
     const row = (r, sug) => '<button class="row' + (sug ? ' sug-row' : '') + '" type="button" data-a="pickrecipe" data-uid="' + esc(r.uid) + '"><span class="main"><b>' + esc(r.name) + (sug ? '<span class="sugbadge">Vorschlag</span>' : '') + '</b><span class="sub">' + esc(agoText(lm[r.uid])) + (r.aufwand ? ' · ' + AUFWAND[r.aufwand] : '') + '</span></span>' + chip(r.kategorie) + '</button>';
     // Ohne Suchtext stehen oben drei Vorschläge, der Rest folgt alphabetisch
     // Gerichte aus der Ablage stehen ganz oben (nicht, wenn gerade etwas in die Ablage gelegt wird)
-    const abl = sh.ablage ? [] : ablage().filter((a) => !text || lc(ablageName(a)).indexOf(text) >= 0);
+    const abl = sh.ablage ? [] : ablage().filter((a) => !text || lc(ablageName(a)).indexOf(lc(text)) >= 0);
     if (abl.length) {
       html += '<div class="plist-sec">Eingekauft, noch ohne Tag</div>' + abl.map((a) => {
         const r = recipeById(a.gericht_uid);
@@ -2135,7 +2148,7 @@
     if (S.busy) return;
     S.busy = true;
     el.disabled = true;
-    Promise.resolve().then(() => fn(el, e)).catch(() => {}).then(() => { S.busy = false; el.disabled = false; });
+    Promise.resolve().then(() => fn(el, e)).catch((err) => { console.error(err); toast((err && err.message) || 'Fehler', true); }).then(() => { S.busy = false; el.disabled = false; });
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && S.sheet) { closeSheet(); return; }

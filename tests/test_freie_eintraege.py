@@ -16,10 +16,9 @@ with start() as T:
         J("document.querySelector('[data-a=nav][data-v=rezepte]').click()"); pg.wait_for_timeout(500)
     addfree('Essen bei Oma'); addfree('Essen bei Oma'); addfree('Pizza Lieferung'); addfree('Brotzeit am See')
     rez(); c0=cnt(); ok('Zähler',c0>=3,c0)
-    # 5) gelöschtes Gericht: Event mit unbekannter gericht_uid
     J("document.querySelector('[data-a=freeopen]').click()"); pg.wait_for_timeout(400)
     txt=J("document.querySelector('.sheet').innerText")
-    ok('Gelöschtes Gericht gelistet','Gericht gelöscht' in txt or True, '')
+    ok('Freie Einträge gelistet',all(n in txt for n in ('Essen bei Oma','Pizza Lieferung','Brotzeit am See')) and '2 Mal' in txt, txt[:200])
     # 4) Ignorieren
     J("[...document.querySelectorAll('[data-a=freepick]')].find(b=>b.innerText.includes('Essen bei Oma')).click()"); pg.wait_for_timeout(400)
     pg.screenshot(path=os.path.join(OUT,'fg192.png'))

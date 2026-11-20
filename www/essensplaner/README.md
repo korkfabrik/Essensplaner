@@ -125,6 +125,13 @@ Aufbau wie in der Merker-App: oben eine Statuskarte (Verbindung, Home-Assistant-
 
 Neueste Version oben. Bei jeder Änderung einen neuen Abschnitt "### Version x.y.z" direkt unter dieser Zeile einfügen.
 
+### Version 1.9.4
+
+- Woche füllen: Lehnt Home Assistant das Anlegen ab, kommt jetzt eine Meldung. Schon angelegte Abende lassen sich mit „Entfernen“ wieder löschen.
+- Fehler beim Speichern werden immer angezeigt, auch beim Import.
+- Ablage-Suche im Gericht-Auswahlfenster unterscheidet nicht mehr zwischen Groß- und Kleinschreibung.
+- Zwei Geräte überschreiben sich nicht mehr gegenseitig die gemeinsame Einstellung (Ablage, Kategorien, Mahlzeiten). Vor jeder Änderung wird der aktuelle Stand aus Home Assistant geholt.
+
 ### Version 1.9.3
 
 - Auswertung: Ohne Rezepte steht bei „Lange nicht gekocht“ jetzt „Noch keine Rezepte angelegt.“ statt eines falschen Hinweises.

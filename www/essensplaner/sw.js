@@ -1,7 +1,7 @@
 /* Service Worker: liefert die App-Dateien aus dem Cache, damit die App schnell und auch ohne Netz startet.
    Jede Version hat einen eigenen Cache, der bei der Installation komplett und am Browser-Cache vorbei gefüllt wird.
    CACHE_VERSION bei jeder Änderung an den App-Dateien erhöhen und mit version.js gleich halten. */
-const CACHE_VERSION = '1.9.3';
+const CACHE_VERSION = '1.9.4';
 const CACHE_NAME = 'essensplaner-' + CACHE_VERSION;
 
 const ASSETS = [
