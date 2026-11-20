@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Essensplaner Diagnose</title>
+<style>
+  body { font: 16px system-ui, sans-serif; margin: 16px; background: #F5F6F8; color: #111827; }
+  h1 { font-size: 22px; }
+  pre { white-space: pre-wrap; word-break: break-word; background: #fff; padding: 12px; border-radius: 12px; font-size: 14px; border: 1px solid #E5E7EB; }
+  button { margin: 8px 8px 8px 0; min-height: 46px; padding: 0 18px; border: 0; border-radius: 12px; background: #2563EB; color: #fff; font: inherit; font-weight: 600; }
+  button.sec { background: #fff; color: #111827; border: 1px solid #E5E7EB; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #111318; color: #F3F4F6; }
+    pre { background: #1C1F26; border-color: #2D323B; }
+    button { background: #3B82F6; color: #0B1220; }
+    button.sec { background: #1C1F26; color: #F3F4F6; border-color: #2D323B; }
+  }
+</style>
+</head>
+<body>
+<h1>Essensplaner Diagnose</h1>
+<pre id="out">Prüfe …</pre>
+<button id="reset">Reparieren (Cache leeren und neu laden)</button>
+<button id="open" class="sec">App öffnen</button>
+<script>
+/* Läuft ohne die App-Dateien, damit sie auch hilft, wenn die App leer bleibt. */
+(async function () {
+  var out = document.getElementById('out');
+  var lines = [];
+  var scope = location.pathname.replace(/[^/]*$/, '');
+  function add(t) { lines.push(t); out.textContent = lines.join('\n'); }
+
+  var assets = [];
+  try {
+    var v = await (await fetch('version.js', { cache: 'reload' })).text();
+    var m1 = v.match(/APP_VERSION = '([^']+)'/);
+    add('version.js auf dem Server: ' + (m1 ? m1[1] : '?'));
+    var sw = await (await fetch('sw.js', { cache: 'reload' })).text();
+    var m2 = sw.match(/CACHE_VERSION = '([^']+)'/);
+    add('sw.js auf dem Server: ' + (m2 ? m2[1] : '?') + (m1 && m2 && m1[1] !== m2[1] ? '  ACHTUNG: Versionen unterschiedlich' : ''));
+    assets = (sw.match(/'\.\/[^']*'/g) || []).map(function (x) { return x.slice(1, -1); });
+  } catch (e) { add('Server nicht erreichbar: ' + e.message); }
+
+  if ('serviceWorker' in navigator && navigator.serviceWorker.getRegistrations) {
+    var regs = (await navigator.serviceWorker.getRegistrations()).filter(function (r) { return new URL(r.scope).pathname.indexOf(scope) === 0; });
+    add('Service Worker der App: ' + (regs.length ? regs.map(function (r) { var w = r.active || r.waiting || r.installing; return (w ? w.state : '?'); }).join(', ') : 'keiner'));
+  } else {
+    add('Service Worker: nicht verfügbar (nur über HTTPS)');
+  }
+  if (window.caches) {
+    var keys = (await caches.keys()).filter(function (k) { return k.indexOf('essensplaner-') === 0; });
+    add('Caches der App: ' + (keys.length ? keys.join(', ') : 'keine'));
+  }
+  try {
+    add('Angemeldet auf diesem Gerät: ' + (localStorage.getItem('essensplaner_auth') ? 'ja' : 'nein'));
+    var snap = JSON.parse(localStorage.getItem('essensplaner_snapshot') || 'null');
+    add('Offline-Stand: ' + (snap && snap.t ? new Date(snap.t).toLocaleString('de-DE') : 'keiner'));
+  } catch (e) { add('Gerätespeicher gesperrt'); }
+
+  var bad = 0;
+  for (var i = 0; i < assets.length; i++) {
+    try {
+      var r = await fetch(assets[i], { cache: 'reload' });
+      if (!r.ok) { bad++; add('FEHLT: ' + assets[i] + ' (HTTP ' + r.status + ')'); }
+    } catch (e) { bad++; add('FEHLT: ' + assets[i] + ' (' + e.message + ')'); }
+  }
+  if (assets.length) add(bad ? bad + ' von ' + assets.length + ' Dateien nicht erreichbar' : 'Alle ' + assets.length + ' Dateien erreichbar');
+
+  document.getElementById('open').onclick = function () { location.href = 'index.html'; };
+  document.getElementById('reset').onclick = async function () {
+    add('Setze zurück …');
+    try {
+      if (navigator.serviceWorker && navigator.serviceWorker.getRegistrations) {
+        var rs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(rs.filter(function (r) { return new URL(r.scope).pathname.indexOf(scope) === 0; }).map(function (r) { return r.unregister(); }));
+      }
+      if (window.caches) {
+        var ks = await caches.keys();
+        await Promise.all(ks.filter(function (k) { return k.indexOf('essensplaner-') === 0; }).map(function (k) { return caches.delete(k); }));
+      }
+      try { sessionStorage.removeItem('essensplaner_recovered'); } catch (e) {}
+    } catch (e) { add('Fehler: ' + e.message); }
+    location.replace('index.html?reload=' + Date.now());
+  };
+})();
+</script>
+</body>
+</html>

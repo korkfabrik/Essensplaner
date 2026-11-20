@@ -1,0 +1,616 @@
+{
+ "recipes": [
+  {
+   "uid": "g0",
+   "summary": "Bandnudeln mit Pilzrahm",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Italienisch\", \"aufwand\": 2, \"portionen\": 2, \"dauer_min\": 25, \"zutaten\": [{\"name\": \"Bandnudeln\", \"menge\": 250, \"einheit\": \"g\"}, {\"name\": \"Champignons\", \"menge\": 300, \"einheit\": \"g\"}, {\"name\": \"Sahne\", \"menge\": 200, \"einheit\": \"ml\"}, {\"name\": \"Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Petersilie\", \"menge\": 1, \"einheit\": \"bund\"}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g1",
+   "summary": "Ofenhähnchen mit Rosmarin",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Mediterran\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 60, \"zutaten\": [{\"name\": \"H\\u00e4hnchenschenkel\", \"menge\": 4, \"einheit\": \"\"}, {\"name\": \"Kartoffeln\", \"menge\": 800, \"einheit\": \"g\"}, {\"name\": \"Zweig Rosmarin\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Oliven\\u00f6l\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g2",
+   "summary": "Brotzeit",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Deutsch\", \"aufwand\": 1, \"portionen\": 2, \"dauer_min\": 10, \"zutaten\": [{\"name\": \"Brot\", \"menge\": 0, \"einheit\": \"\"}, {\"name\": \"Aufschnitt\", \"menge\": 0, \"einheit\": \"\"}, {\"name\": \"K\\u00e4se\", \"menge\": 0, \"einheit\": \"\"}, {\"name\": \"Butter\", \"menge\": 0, \"einheit\": \"\"}, {\"name\": \"Gurke\", \"menge\": 1, \"einheit\": \"\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g3",
+   "summary": "Rührei mit Toast",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Alltag\", \"aufwand\": 1, \"portionen\": 2, \"dauer_min\": 10, \"zutaten\": [{\"name\": \"Eier\", \"menge\": 6, \"einheit\": \"\"}, {\"name\": \"Toast\", \"menge\": 4, \"einheit\": \"\"}, {\"name\": \"Butter\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Schnittlauch\", \"menge\": 0, \"einheit\": \"\"}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g4",
+   "summary": "Chili con Carne",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Tex-Mex\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 45, \"zutaten\": [{\"name\": \"Hackfleisch\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Kidneybohnen\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Mais\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Tomaten\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Paprika\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Chili\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g5",
+   "summary": "Chili mit Süßkartoffel",
+   "description": "{\"kategorie\": \"vegan\", \"kueche\": \"Tex-Mex\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 45, \"zutaten\": [{\"name\": \"S\\u00fc\\u00dfkartoffeln\", \"menge\": 600, \"einheit\": \"g\"}, {\"name\": \"Kidneybohnen\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Tomaten\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Kreuzk\\u00fcmmel\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g6",
+   "summary": "Kichererbsencurry",
+   "description": "{\"kategorie\": \"vegan\", \"kueche\": \"Indisch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 35, \"zutaten\": [{\"name\": \"Kichererbsen\", \"menge\": 2, \"einheit\": \"dose\"}, {\"name\": \"Kokosmilch\", \"menge\": 400, \"einheit\": \"ml\"}, {\"name\": \"Tomaten\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Knoblauchzehe\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Currypulver\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Reis\", \"menge\": 250, \"einheit\": \"g\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g7",
+   "summary": "Fischfilet mit Senfsoße",
+   "description": "{\"kategorie\": \"fisch\", \"kueche\": \"Deutsch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 30, \"zutaten\": [{\"name\": \"Seelachsfilet\", \"menge\": 600, \"einheit\": \"g\"}, {\"name\": \"Sahne\", \"menge\": 200, \"einheit\": \"ml\"}, {\"name\": \"Senf\", \"menge\": 2, \"einheit\": \"el\"}, {\"name\": \"Kartoffeln\", \"menge\": 800, \"einheit\": \"g\"}, {\"name\": \"Dill\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g8",
+   "summary": "Zwiebelkuchen",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Deutsch\", \"aufwand\": 3, \"portionen\": 4, \"dauer_min\": 75, \"zutaten\": [{\"name\": \"Mehl\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Zwiebeln\", \"menge\": 1, \"einheit\": \"kg\"}, {\"name\": \"Schmand\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Eier\", \"menge\": 3, \"einheit\": \"\"}, {\"name\": \"K\\u00fcmmel\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g9",
+   "summary": "Mie-Nudeln mit Gemüse",
+   "description": "{\"kategorie\": \"vegan\", \"kueche\": \"Asiatisch\", \"aufwand\": 1, \"portionen\": 2, \"dauer_min\": 20, \"zutaten\": [{\"name\": \"Mie-Nudeln\", \"menge\": 250, \"einheit\": \"g\"}, {\"name\": \"Paprika\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"M\\u00f6hre\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Zuckerschoten\", \"menge\": 100, \"einheit\": \"g\"}, {\"name\": \"Sojaso\\u00dfe\", \"menge\": 3, \"einheit\": \"el\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g10",
+   "summary": "Bami Goreng",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Asiatisch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 30, \"zutaten\": [{\"name\": \"Mie-Nudeln\", \"menge\": 400, \"einheit\": \"g\"}, {\"name\": \"H\\u00e4hnchenbrust\", \"menge\": 300, \"einheit\": \"g\"}, {\"name\": \"M\\u00f6hren\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Wei\\u00dfkohl\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Sojaso\\u00dfe\", \"menge\": 4, \"einheit\": \"el\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g11",
+   "summary": "Reispfanne mit Erbsen",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Alltag\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 25, \"zutaten\": [{\"name\": \"Reis\", \"menge\": 300, \"einheit\": \"g\"}, {\"name\": \"Erbsen\", \"menge\": 300, \"einheit\": \"g\"}, {\"name\": \"Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Eier\", \"menge\": 3, \"einheit\": \"\"}, {\"name\": \"Sojaso\\u00dfe\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g12",
+   "summary": "Rotes Thai-Curry",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Asiatisch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 35, \"zutaten\": [{\"name\": \"Kokosmilch\", \"menge\": 400, \"einheit\": \"ml\"}, {\"name\": \"Currypaste\", \"menge\": 2, \"einheit\": \"el\"}, {\"name\": \"Zucchini\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Paprika\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Tofu\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Reis\", \"menge\": 250, \"einheit\": \"g\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g13",
+   "summary": "Udon-Suppe",
+   "description": "{\"kategorie\": \"vegan\", \"kueche\": \"Asiatisch\", \"aufwand\": 2, \"portionen\": 2, \"dauer_min\": 25, \"zutaten\": [{\"name\": \"Udon\", \"menge\": 300, \"einheit\": \"g\"}, {\"name\": \"Gem\\u00fcsebr\\u00fche\", \"menge\": 1, \"einheit\": \"l\"}, {\"name\": \"Pak Choi\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Champignons\", \"menge\": 100, \"einheit\": \"g\"}, {\"name\": \"Fr\\u00fchlingszwiebeln\", \"menge\": 2, \"einheit\": \"\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g14",
+   "summary": "Tortellini in Brühe",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Italienisch\", \"aufwand\": 1, \"portionen\": 2, \"dauer_min\": 15, \"zutaten\": [{\"name\": \"Tortellini\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Gem\\u00fcsebr\\u00fche\", \"menge\": 1, \"einheit\": \"l\"}, {\"name\": \"Petersilie\", \"menge\": 1, \"einheit\": \"bund\"}, {\"name\": \"Parmesan\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g15",
+   "summary": "Bauernsalat mit Feta",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Griechisch\", \"aufwand\": 1, \"portionen\": 2, \"dauer_min\": 15, \"zutaten\": [{\"name\": \"Feta\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Tomaten\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Gurke\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Paprika\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"rote Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Oliven\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Oliven\\u00f6l\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g16",
+   "summary": "Grillspieße",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Alltag\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 40, \"zutaten\": [{\"name\": \"Schweinenacken\", \"menge\": 600, \"einheit\": \"g\"}, {\"name\": \"Paprika\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Zwiebeln\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Grillgew\\u00fcrz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g17",
+   "summary": "Rindergulasch",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"\\u00d6sterreichisch\", \"aufwand\": 3, \"portionen\": 4, \"dauer_min\": 120, \"zutaten\": [{\"name\": \"Rindergulasch\", \"menge\": 800, \"einheit\": \"g\"}, {\"name\": \"Zwiebeln\", \"menge\": 600, \"einheit\": \"g\"}, {\"name\": \"Paprikapulver\", \"menge\": 2, \"einheit\": \"el\"}, {\"name\": \"Tomatenmark\", \"menge\": 2, \"einheit\": \"el\"}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g18",
+   "summary": "Hähnchen-Gemüse-Pfanne",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Alltag\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 30, \"zutaten\": [{\"name\": \"H\\u00e4hnchenbrust\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Brokkoli\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"M\\u00f6hren\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Reis\", \"menge\": 250, \"einheit\": \"g\"}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g19",
+   "summary": "Butter Chicken",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Indisch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 45, \"zutaten\": [{\"name\": \"H\\u00e4hnchenbrust\", \"menge\": 600, \"einheit\": \"g\"}, {\"name\": \"Joghurt\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Tomaten\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Sahne\", \"menge\": 100, \"einheit\": \"ml\"}, {\"name\": \"Garam Masala\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Reis\", \"menge\": 250, \"einheit\": \"g\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g20",
+   "summary": "Grießbrei mit Kirschen",
+   "description": "{\"kategorie\": \"s\\u00fc\\u00df\", \"kueche\": \"Deutsch\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 15, \"zutaten\": [{\"name\": \"Milch\", \"menge\": 1, \"einheit\": \"l\"}, {\"name\": \"Grie\\u00df\", \"menge\": 120, \"einheit\": \"g\"}, {\"name\": \"Zucker\", \"menge\": 60, \"einheit\": \"g\"}, {\"name\": \"Glas Kirschen\", \"menge\": 1, \"einheit\": \"\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g21",
+   "summary": "Kartoffelrösti mit Quark",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Schweizer\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 40, \"zutaten\": [{\"name\": \"Kartoffeln\", \"menge\": 1, \"einheit\": \"kg\"}, {\"name\": \"Quark\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Schnittlauch\", \"menge\": 1, \"einheit\": \"bund\"}, {\"name\": \"\\u00d6l\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g22",
+   "summary": "Kürbissuppe",
+   "description": "{\"kategorie\": \"vegan\", \"kueche\": \"Deutsch\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 40, \"zutaten\": [{\"name\": \"Hokkaido\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Kokosmilch\", \"menge\": 400, \"einheit\": \"ml\"}, {\"name\": \"St\\u00fcck Ingwer\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g23",
+   "summary": "Spinatknödel",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"\\u00d6sterreichisch\", \"aufwand\": 3, \"portionen\": 4, \"dauer_min\": 50, \"zutaten\": [{\"name\": \"Kn\\u00f6delbrot\", \"menge\": 300, \"einheit\": \"g\"}, {\"name\": \"Spinat\", \"menge\": 300, \"einheit\": \"g\"}, {\"name\": \"Milch\", \"menge\": 250, \"einheit\": \"ml\"}, {\"name\": \"Eier\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Parmesan\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g24",
+   "summary": "Forelle aus dem Ofen",
+   "description": "{\"kategorie\": \"fisch\", \"kueche\": \"Deutsch\", \"aufwand\": 2, \"portionen\": 2, \"dauer_min\": 40, \"zutaten\": [{\"name\": \"Forellen\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Zitrone\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Petersilie\", \"menge\": 1, \"einheit\": \"bund\"}, {\"name\": \"Kartoffeln\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g25",
+   "summary": "Teriyaki-Lachs mit Reis",
+   "description": "{\"kategorie\": \"fisch\", \"kueche\": \"Asiatisch\", \"aufwand\": 2, \"portionen\": 2, \"dauer_min\": 30, \"zutaten\": [{\"name\": \"Lachsfilet\", \"menge\": 300, \"einheit\": \"g\"}, {\"name\": \"Teriyakiso\\u00dfe\", \"menge\": 3, \"einheit\": \"el\"}, {\"name\": \"Reis\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Brokkoli\", \"menge\": 1, \"einheit\": \"\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g26",
+   "summary": "Gemüselasagne",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Italienisch\", \"aufwand\": 3, \"portionen\": 4, \"dauer_min\": 75, \"zutaten\": [{\"name\": \"Lasagneplatten\", \"menge\": 12, \"einheit\": \"\"}, {\"name\": \"Zucchini\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Aubergine\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Tomatenso\\u00dfe\", \"menge\": 500, \"einheit\": \"ml\"}, {\"name\": \"Mozzarella\", \"menge\": 200, \"einheit\": \"g\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g27",
+   "summary": "Erbsensuppe",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Deutsch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 60, \"zutaten\": [{\"name\": \"Erbsen\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Kartoffeln\", \"menge\": 3, \"einheit\": \"\"}, {\"name\": \"M\\u00f6hren\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Lauch\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g28",
+   "summary": "Penne mit Brokkoli",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Italienisch\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 20, \"zutaten\": [{\"name\": \"Penne\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Brokkoli\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Knoblauchzehe\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Parmesan\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Oliven\\u00f6l\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g29",
+   "summary": "Gefüllte Paprika",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Alltag\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 60, \"zutaten\": [{\"name\": \"Paprika\", \"menge\": 4, \"einheit\": \"\"}, {\"name\": \"Hackfleisch\", \"menge\": 400, \"einheit\": \"g\"}, {\"name\": \"Reis\", \"menge\": 100, \"einheit\": \"g\"}, {\"name\": \"Tomatenso\\u00dfe\", \"menge\": 500, \"einheit\": \"ml\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g30",
+   "summary": "Penne all'arrabbiata",
+   "description": "{\"kategorie\": \"vegan\", \"kueche\": \"Italienisch\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 20, \"zutaten\": [{\"name\": \"Penne\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Tomaten\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Knoblauchzehe\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Chili\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Oliven\\u00f6l\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g31",
+   "summary": "Arme Ritter",
+   "description": "{\"kategorie\": \"s\\u00fc\\u00df\", \"kueche\": \"Deutsch\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 20, \"zutaten\": [{\"name\": \"Scheiben Toast\", \"menge\": 8, \"einheit\": \"\"}, {\"name\": \"Eier\", \"menge\": 3, \"einheit\": \"\"}, {\"name\": \"Milch\", \"menge\": 250, \"einheit\": \"ml\"}, {\"name\": \"Zimt\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Zucker\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g32",
+   "summary": "Döner holen",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Alltag\", \"aufwand\": 1, \"zutaten\": [], \"tags\": [\"ausw\\u00e4rts\"]}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g33",
+   "summary": "Pizza Funghi",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Italienisch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 40, \"zutaten\": [{\"name\": \"Pizzateig\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Champignons\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Mozzarella\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Tomatenso\\u00dfe\", \"menge\": 400, \"einheit\": \"ml\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g34",
+   "summary": "Pizza Thunfisch",
+   "description": "{\"kategorie\": \"fisch\", \"kueche\": \"Italienisch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 40, \"zutaten\": [{\"name\": \"Pizzateig\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Thunfisch\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"rote Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Mozzarella\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Tomatenso\\u00dfe\", \"menge\": 400, \"einheit\": \"ml\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g35",
+   "summary": "Käsefondue",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Schweizer\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 30, \"zutaten\": [{\"name\": \"Fonduek\\u00e4se\", \"menge\": 600, \"einheit\": \"g\"}, {\"name\": \"Baguette\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Wei\\u00dfwein\", \"menge\": 200, \"einheit\": \"ml\"}, {\"name\": \"Knoblauchzehe\", \"menge\": 1, \"einheit\": \"\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g36",
+   "summary": "Hackbällchen in Tomatensoße",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Italienisch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 40, \"zutaten\": [{\"name\": \"Hackfleisch\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Ei\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Semmelbr\\u00f6sel\", \"menge\": 2, \"einheit\": \"el\"}, {\"name\": \"Tomaten\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Spaghetti\", \"menge\": 500, \"einheit\": \"g\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g37",
+   "summary": "Kürbisrisotto",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Italienisch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 40, \"zutaten\": [{\"name\": \"Risottoreis\", \"menge\": 300, \"einheit\": \"g\"}, {\"name\": \"K\\u00fcrbis\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Gem\\u00fcsebr\\u00fche\", \"menge\": 1, \"einheit\": \"l\"}, {\"name\": \"Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Parmesan\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g38",
+   "summary": "Wraps mit Hähnchen",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Alltag\", \"aufwand\": 1, \"portionen\": 2, \"dauer_min\": 20, \"zutaten\": [{\"name\": \"Wraps\", \"menge\": 4, \"einheit\": \"\"}, {\"name\": \"H\\u00e4hnchenbrust\", \"menge\": 300, \"einheit\": \"g\"}, {\"name\": \"Salatkopf\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Tomaten\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Joghurtso\\u00dfe\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g39",
+   "summary": "Burger im Lokal",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Alltag\", \"aufwand\": 1, \"zutaten\": [], \"tags\": [\"ausw\\u00e4rts\"]}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g40",
+   "summary": "Leberkäse mit Kartoffelsalat",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Deutsch\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 30, \"zutaten\": [{\"name\": \"Scheiben Leberk\\u00e4se\", \"menge\": 4, \"einheit\": \"\"}, {\"name\": \"Kartoffeln\", \"menge\": 1, \"einheit\": \"kg\"}, {\"name\": \"Gurke\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Essig\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"\\u00d6l\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g41",
+   "summary": "Menemen",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Orientalisch\", \"aufwand\": 1, \"portionen\": 2, \"dauer_min\": 20, \"zutaten\": [{\"name\": \"Eier\", \"menge\": 4, \"einheit\": \"\"}, {\"name\": \"Tomaten\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Spitzpaprika\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Fladenbrot\", \"menge\": 0, \"einheit\": \"\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g42",
+   "summary": "Linguine mit Garnelen",
+   "description": "{\"kategorie\": \"fisch\", \"kueche\": \"Italienisch\", \"aufwand\": 2, \"portionen\": 2, \"dauer_min\": 25, \"zutaten\": [{\"name\": \"Linguine\", \"menge\": 250, \"einheit\": \"g\"}, {\"name\": \"Garnelen\", \"menge\": 200, \"einheit\": \"g\"}, {\"name\": \"Knoblauchzehe\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Zitrone\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Petersilie\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g43",
+   "summary": "Lasagne Bolognese",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Italienisch\", \"aufwand\": 3, \"portionen\": 4, \"dauer_min\": 90, \"zutaten\": [{\"name\": \"Lasagneplatten\", \"menge\": 12, \"einheit\": \"\"}, {\"name\": \"Hackfleisch\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Tomaten\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Milch\", \"menge\": 500, \"einheit\": \"ml\"}, {\"name\": \"K\\u00e4se\", \"menge\": 200, \"einheit\": \"g\"}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g44",
+   "summary": "Spaghetti mit Zitronensoße",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Italienisch\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 20, \"zutaten\": [{\"name\": \"Spaghetti\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Zitronen\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Sahne\", \"menge\": 200, \"einheit\": \"ml\"}, {\"name\": \"Parmesan\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g45",
+   "summary": "Kartoffeln mit Rahmspinat und Ei",
+   "description": "{\"kategorie\": \"vegetarisch\", \"kueche\": \"Deutsch\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 30, \"zutaten\": [{\"name\": \"Kartoffeln\", \"menge\": 1, \"einheit\": \"kg\"}, {\"name\": \"Rahmspinat\", \"menge\": 450, \"einheit\": \"g\"}, {\"name\": \"Eier\", \"menge\": 4, \"einheit\": \"\"}, {\"name\": \"Salz\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Pfeffer\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g46",
+   "summary": "Germknödel mit Vanillesoße",
+   "description": "{\"kategorie\": \"s\\u00fc\\u00df\", \"kueche\": \"\\u00d6sterreichisch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 35, \"zutaten\": [{\"name\": \"Germkn\\u00f6del\", \"menge\": 4, \"einheit\": \"\"}, {\"name\": \"Vanilleso\\u00dfe\", \"menge\": 500, \"einheit\": \"ml\"}, {\"name\": \"Mohn\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}, {\"name\": \"Zucker\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g47",
+   "summary": "Burrito-Bowl",
+   "description": "{\"kategorie\": \"vegan\", \"kueche\": \"Mexikanisch\", \"aufwand\": 2, \"portionen\": 4, \"dauer_min\": 35, \"zutaten\": [{\"name\": \"Reis\", \"menge\": 250, \"einheit\": \"g\"}, {\"name\": \"schwarze Bohnen\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Mais\", \"menge\": 1, \"einheit\": \"dose\"}, {\"name\": \"Avocados\", \"menge\": 2, \"einheit\": \"\"}, {\"name\": \"Limette\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Koriander\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g48",
+   "summary": "Tomatensuppe mit Brot",
+   "description": "{\"kategorie\": \"vegan\", \"kueche\": \"Alltag\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 25, \"zutaten\": [{\"name\": \"Tomaten\", \"menge\": 2, \"einheit\": \"dose\"}, {\"name\": \"Zwiebel\", \"menge\": 1, \"einheit\": \"\"}, {\"name\": \"Gem\\u00fcsebr\\u00fche\", \"menge\": 500, \"einheit\": \"ml\"}, {\"name\": \"Brot\", \"menge\": 0, \"einheit\": \"\"}, {\"name\": \"Basilikum\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  },
+  {
+   "uid": "g49",
+   "summary": "Bratwurst mit Sauerkraut",
+   "description": "{\"kategorie\": \"fleisch\", \"kueche\": \"Deutsch\", \"aufwand\": 1, \"portionen\": 4, \"dauer_min\": 30, \"zutaten\": [{\"name\": \"Bratw\\u00fcrste\", \"menge\": 8, \"einheit\": \"\"}, {\"name\": \"Sauerkraut\", \"menge\": 500, \"einheit\": \"g\"}, {\"name\": \"Kartoffeln\", \"menge\": 1, \"einheit\": \"kg\"}, {\"name\": \"Senf\", \"menge\": 0, \"einheit\": \"\", \"optional\": true}], \"tags\": []}",
+   "status": "needs_action"
+  }
+ ],
+ "events": [
+  {
+   "uid": "p0",
+   "summary": "Bandnudeln mit Pilzrahm",
+   "start": "2026-09-15T12:00:00",
+   "end": "2026-09-15T13:00:00",
+   "description": "{\"slot\": \"mittag\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g0\"}"
+  },
+  {
+   "uid": "p1",
+   "summary": "Brotzeit",
+   "start": "2026-09-15T18:00:00",
+   "end": "2026-09-15T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g2\"}"
+  },
+  {
+   "uid": "p2",
+   "summary": "Rotes Thai-Curry",
+   "start": "2026-09-16T18:00:00",
+   "end": "2026-09-16T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g12\"}"
+  },
+  {
+   "uid": "p3",
+   "summary": "Germknödel mit Vanillesoße",
+   "start": "2026-09-19T18:00:00",
+   "end": "2026-09-19T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g46\"}"
+  },
+  {
+   "uid": "p4",
+   "summary": "Gefüllte Paprika",
+   "start": "2026-09-20T18:00:00",
+   "end": "2026-09-20T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g29\"}"
+  },
+  {
+   "uid": "p5",
+   "summary": "Spinatknödel",
+   "start": "2026-09-21T18:00:00",
+   "end": "2026-09-21T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g23\"}"
+  },
+  {
+   "uid": "p6",
+   "summary": "Butter Chicken",
+   "start": "2026-09-22T18:00:00",
+   "end": "2026-09-22T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g19\"}"
+  },
+  {
+   "uid": "p7",
+   "summary": "Reispfanne mit Erbsen",
+   "start": "2026-09-26T18:00:00",
+   "end": "2026-09-26T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g11\"}"
+  },
+  {
+   "uid": "p8",
+   "summary": "Bauernsalat mit Feta",
+   "start": "2026-09-27T18:00:00",
+   "end": "2026-09-27T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g15\"}"
+  },
+  {
+   "uid": "p9",
+   "summary": "Brotzeit",
+   "start": "2026-09-28T18:00:00",
+   "end": "2026-09-28T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g2\"}"
+  },
+  {
+   "uid": "p10",
+   "summary": "Spinatknödel",
+   "start": "2026-09-29T18:00:00",
+   "end": "2026-09-29T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g23\"}"
+  },
+  {
+   "uid": "p11",
+   "summary": "Zwiebelkuchen",
+   "start": "2026-10-01T18:00:00",
+   "end": "2026-10-01T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g8\"}"
+  },
+  {
+   "uid": "p12",
+   "summary": "Fischfilet mit Senfsoße",
+   "start": "2026-10-02T12:00:00",
+   "end": "2026-10-02T13:00:00",
+   "description": "{\"slot\": \"mittag\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g7\"}"
+  },
+  {
+   "uid": "p13",
+   "summary": "Gemüselasagne",
+   "start": "2026-10-02T18:00:00",
+   "end": "2026-10-02T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g26\"}"
+  },
+  {
+   "uid": "p14",
+   "summary": "Zwiebelkuchen",
+   "start": "2026-10-09T18:00:00",
+   "end": "2026-10-09T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g8\"}"
+  },
+  {
+   "uid": "p15",
+   "summary": "Forelle aus dem Ofen",
+   "start": "2026-10-10T18:00:00",
+   "end": "2026-10-10T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g24\"}"
+  },
+  {
+   "uid": "p16",
+   "summary": "Forelle aus dem Ofen",
+   "start": "2026-10-11T18:00:00",
+   "end": "2026-10-11T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g24\"}"
+  },
+  {
+   "uid": "p17",
+   "summary": "Leberkäse mit Kartoffelsalat",
+   "start": "2026-10-12T18:00:00",
+   "end": "2026-10-12T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g40\"}"
+  },
+  {
+   "uid": "p18",
+   "summary": "Hähnchen-Gemüse-Pfanne",
+   "start": "2026-10-16T18:00:00",
+   "end": "2026-10-16T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g18\"}"
+  },
+  {
+   "uid": "p19",
+   "summary": "Rührei mit Toast",
+   "start": "2026-10-18T18:00:00",
+   "end": "2026-10-18T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g3\"}"
+  },
+  {
+   "uid": "p20",
+   "summary": "Tomatensuppe mit Brot",
+   "start": "2026-10-19T18:00:00",
+   "end": "2026-10-19T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g48\"}"
+  },
+  {
+   "uid": "p21",
+   "summary": "Arme Ritter",
+   "start": "2026-10-21T18:00:00",
+   "end": "2026-10-21T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g31\"}"
+  },
+  {
+   "uid": "p22",
+   "summary": "Hackbällchen in Tomatensoße",
+   "start": "2026-10-23T18:00:00",
+   "end": "2026-10-23T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g36\"}"
+  },
+  {
+   "uid": "p23",
+   "summary": "Mie-Nudeln mit Gemüse",
+   "start": "2026-10-24T18:00:00",
+   "end": "2026-10-24T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g9\"}"
+  },
+  {
+   "uid": "p24",
+   "summary": "Gemüselasagne",
+   "start": "2026-10-26T12:00:00",
+   "end": "2026-10-26T13:00:00",
+   "description": "{\"slot\": \"mittag\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g26\"}"
+  },
+  {
+   "uid": "p25",
+   "summary": "Fischfilet mit Senfsoße",
+   "start": "2026-10-26T18:00:00",
+   "end": "2026-10-26T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g7\"}"
+  },
+  {
+   "uid": "p26",
+   "summary": "Kürbisrisotto",
+   "start": "2026-10-27T18:00:00",
+   "end": "2026-10-27T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g37\"}"
+  },
+  {
+   "uid": "p27",
+   "summary": "Grießbrei mit Kirschen",
+   "start": "2026-10-28T18:00:00",
+   "end": "2026-10-28T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g20\"}"
+  },
+  {
+   "uid": "p28",
+   "summary": "Linguine mit Garnelen",
+   "start": "2026-10-30T18:00:00",
+   "end": "2026-10-30T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g42\"}"
+  },
+  {
+   "uid": "p29",
+   "summary": "Menemen",
+   "start": "2026-10-31T18:00:00",
+   "end": "2026-10-31T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g41\"}"
+  },
+  {
+   "uid": "p30",
+   "summary": "Teriyaki-Lachs mit Reis",
+   "start": "2026-11-01T18:00:00",
+   "end": "2026-11-01T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g25\"}"
+  },
+  {
+   "uid": "p31",
+   "summary": "Wraps mit Hähnchen",
+   "start": "2026-11-04T18:00:00",
+   "end": "2026-11-04T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g38\"}"
+  },
+  {
+   "uid": "p32",
+   "summary": "Tortellini in Brühe",
+   "start": "2026-11-05T18:00:00",
+   "end": "2026-11-05T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g14\"}"
+  },
+  {
+   "uid": "p33",
+   "summary": "Burrito-Bowl",
+   "start": "2026-11-06T18:00:00",
+   "end": "2026-11-06T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g47\"}"
+  },
+  {
+   "uid": "p34",
+   "summary": "Kichererbsencurry",
+   "start": "2026-11-09T18:00:00",
+   "end": "2026-11-09T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g6\"}"
+  },
+  {
+   "uid": "p35",
+   "summary": "Rührei mit Toast",
+   "start": "2026-11-10T18:00:00",
+   "end": "2026-11-10T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"gekocht\", \"portionen\": 4, \"gericht_uid\": \"g3\"}"
+  },
+  {
+   "uid": "w0",
+   "summary": "Brotzeit",
+   "start": "2026-11-14T18:00:00",
+   "end": "2026-11-14T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"geplant\", \"portionen\": 4, \"gericht_uid\": \"g2\"}"
+  },
+  {
+   "uid": "w1",
+   "summary": "Chili con Carne",
+   "start": "2026-11-15T18:00:00",
+   "end": "2026-11-15T19:00:00",
+   "description": "{\"slot\": \"abend\", \"status\": \"geplant\", \"portionen\": 4, \"gericht_uid\": \"g4\"}"
+  }
+ ],
+ "config": {
+  "v": 1,
+  "kategorien": [
+   {
+    "key": "fleisch",
+    "label": "Fleisch"
+   },
+   {
+    "key": "vegetarisch",
+    "label": "Vegetarisch"
+   },
+   {
+    "key": "fisch",
+    "label": "Fisch"
+   }
+  ],
+  "kuechen": [
+   {
+    "key": "deutsch",
+    "label": "Deutsch"
+   }
+  ],
+  "einheiten": [
+   "g",
+   "stk"
+  ],
+  "slots": [
+   {
+    "key": "mittag",
+    "label": "Mittag",
+    "start": "12:00",
+    "ende": "13:00",
+    "aktiv": true
+   },
+   {
+    "key": "abend",
+    "label": "Abend",
+    "start": "18:00",
+    "ende": "19:00",
+    "aktiv": true
+   }
+  ],
+  "standard_portionen": 4
+ }
+}

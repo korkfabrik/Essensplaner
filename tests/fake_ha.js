@@ -1,0 +1,19 @@
+(()=>{const R=__DATA__;
+class FW{constructor(u){this.readyState=0;setTimeout(()=>{this.readyState=1;this.onmessage&&this.onmessage({data:JSON.stringify({type:'auth_required'})})},5)}
+send(s){const m=JSON.parse(s);(window.__sent=window.__sent||[]).push(m);const r=(res)=>setTimeout(()=>this.onmessage({data:JSON.stringify(res)}),3);
+if(m.type==='auth'){r({type:'auth_ok'});return}
+if(m.type==='todo/item/subscribe'){r({id:m.id,type:'result',success:true,result:null});setTimeout(()=>this.onmessage({data:JSON.stringify({id:m.id,type:'event',event:{items:R.recipes}})}),10);return}
+if(m.type==='todo/item/list'){const cfg=String(m.entity_id).indexOf('config')>=0;r({id:m.id,type:'result',success:true,result:{items:cfg?[{uid:'c1',summary:'config',description:JSON.stringify(R.config)}]:R.recipes}});return}
+if(m.type==='call_service'&&m.service==='remove_item'){R.recipes=R.recipes.filter(x=>(m.service_data.item||[]).indexOf(x.uid)<0)}
+if(m.type==='call_service'&&m.service==='add_item'&&m.service_data&&m.service_data.item!=='config'){R.recipes.push({uid:'nr'+m.id,summary:m.service_data.item,description:m.service_data.description,status:'needs_action'})}
+if(m.type==='get_states'){r({id:m.id,type:'result',success:true,result:[{entity_id:'todo.gerichte',attributes:{friendly_name:'Gerichte'}},{entity_id:'todo.essensplaner_config',attributes:{friendly_name:'Essensplaner Config'}},{entity_id:'todo.zuhause',attributes:{friendly_name:'Zuhause (Bring)'}},{entity_id:'todo.shopping_list',attributes:{friendly_name:'Einkaufsliste'}},{entity_id:'todo.liste_01',attributes:{friendly_name:'Liste 01'}},{entity_id:'todo.liste_02',attributes:{friendly_name:'Liste 02'}},{entity_id:'todo.liste_03',attributes:{friendly_name:'Liste 03'}},{entity_id:'todo.liste_04',attributes:{friendly_name:'Liste 04'}},{entity_id:'todo.liste_05',attributes:{friendly_name:'Liste 05'}},{entity_id:'todo.liste_06',attributes:{friendly_name:'Liste 06'}},{entity_id:'todo.liste_07',attributes:{friendly_name:'Liste 07'}},{entity_id:'todo.liste_08',attributes:{friendly_name:'Liste 08'}},{entity_id:'todo.liste_09',attributes:{friendly_name:'Liste 09'}},{entity_id:'todo.liste_10',attributes:{friendly_name:'Liste 10'}},{entity_id:'todo.liste_11',attributes:{friendly_name:'Liste 11'}},{entity_id:'todo.liste_12',attributes:{friendly_name:'Liste 12'}},{entity_id:'todo.liste_13',attributes:{friendly_name:'Liste 13'}},{entity_id:'todo.liste_14',attributes:{friendly_name:'Liste 14'}},{entity_id:'todo.liste_15',attributes:{friendly_name:'Liste 15'}},{entity_id:'todo.liste_16',attributes:{friendly_name:'Liste 16'}},{entity_id:'calendar.essensplan',attributes:{friendly_name:'Essensplan'}},{entity_id:'calendar.muell',attributes:{friendly_name:'Müllabfuhr'}}]});return}
+if(m.type==='call_service'&&m.service==='update_item'&&m.service_data&&m.service_data.item==='c1'&&m.service_data.description){try{R.config=JSON.parse(m.service_data.description)}catch(e){}}
+if(m.type==='calendar/event/create'){R.events.push({uid:'n'+m.id,summary:m.event.summary,description:m.event.description,start:m.event.dtstart,end:m.event.dtend})}
+if(m.type==='calendar/event/update'){const e=R.events.find(x=>x.uid===m.uid);if(e){e.summary=m.event.summary;e.description=m.event.description;e.start=m.event.dtstart;e.end=m.event.dtend}}
+if(m.type==='calendar/event/delete'){R.events=R.events.filter(x=>x.uid!==m.uid)}
+r({id:m.id,type:'result',success:true,result:null})}
+close(){this.readyState=3;this.onclose&&this.onclose()}}
+window.WebSocket=FW;
+localStorage.setItem('essensplaner_settings',JSON.stringify({bring:'todo.zuhause'}));localStorage.setItem('essensplaner_auth',JSON.stringify({access_token:'x',refresh_token:'y',expires:Date.now()+3600000}));
+const o=window.fetch;window.fetch=(u,i)=>{u=String(u);if(u.indexOf('/api/calendars/')>=0)return Promise.resolve(new Response(JSON.stringify(R.events),{status:200}));return o(u,i)};
+})();
