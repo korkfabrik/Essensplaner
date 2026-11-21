@@ -56,23 +56,33 @@ Es entsteht ein Gerät "korkfabrik/Essensplaner" mit dem Sensor "Letzter Commit"
 
 ## 5. Automation: Update bei neuem Commit
 
-Reiter **Automatisierungen** → Neue Automation → ⋮ → "In YAML bearbeiten". `sensor.PLATZHALTER_ESSENSPLANER_LETZTER_COMMIT` durch die ID aus Schritt 4 ersetzen:
+Reiter **Automatisierungen** → Neue Automation → ⋮ → "In YAML bearbeiten". Bei dir heißt der Sensor `sensor.korkfabrik_essensplaner_letzter_commit`. Sonst die ID aus Schritt 4 eintragen. Die Automation aktualisiert selbst und schickt das Ergebnis mit der Commit-Nachricht aufs Pixel:
 
 ```yaml
 alias: Essensplaner bei neuem Commit aktualisieren
-description: Holt die App nach jedem neuen Commit auf main aus GitHub
+description: Holt die App nach jedem neuen Commit auf main aus GitHub und meldet das Ergebnis
 triggers:
   - trigger: state
-    entity_id: sensor.PLATZHALTER_ESSENSPLANER_LETZTER_COMMIT
+    entity_id:
+      - sensor.korkfabrik_essensplaner_letzter_commit
     attribute: sha
 conditions:
   - condition: template
-    value_template: >-
+    value_template: |-
       {{ trigger.from_state is not none
          and trigger.from_state.state not in ['unknown', 'unavailable']
          and trigger.to_state.state not in ['unknown', 'unavailable'] }}
 actions:
-  - action: script.essensplaner_aktualisieren
+  - action: shell_command.essensplaner_update
+    response_variable: result
+    continue_on_error: true
+  - action: notify.mobile_app_p9p
+    data:
+      title: 🍽️ Essensplaner
+      message: >-
+        {% if result is defined and result.returncode == 0 %}✅ {{ result.stdout }}
+        {% else %}⚠️ Update fehlgeschlagen: {{ (result.stderr or result.stdout) if result is defined else 'keine Antwort' }}{% endif %}
+        · 📝 {{ trigger.to_state.state | truncate(80) }}
 mode: single
 ```
 
