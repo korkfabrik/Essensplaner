@@ -78,6 +78,7 @@ Was die Tests nicht abdecken: echtes HA (Kalender-UIDs, REST), Tastatur auf dem 
 
 ## Ausrollen
 
+- Normalfall: HA holt `main` selbst aus GitHub. `ha/essensplaner_update.sh` läuft per `shell_command.essensplaner_update`, ausgelöst vom Knopf `script.essensplaner_aktualisieren` oder bei neuem Commit über die GitHub-Integration. Einrichtung in `ha/EINRICHTEN.md`, gleicher Aufbau wie bei Merker. Alles, was auf `main` landet, ist also kurz danach live. Das Skript bricht ab, wenn `version.js` und `sw.js` nicht übereinstimmen.
 - `scripts/build_zip.sh` baut `dist/essensplaner-pwa-v<version>.zip` (Ordner `essensplaner` darin).
 - `scripts/deploy.sh` kopiert per `rsync` über SSH nach `/config/www/essensplaner` (Ziel per Umgebungsvariable, siehe Skript).
 
