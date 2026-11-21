@@ -125,6 +125,10 @@ Aufbau wie in der Merker-App: oben eine Statuskarte (Verbindung, Home-Assistant-
 
 Neueste Version oben. Bei jeder Änderung einen neuen Abschnitt "### Version x.y.z" direkt unter dieser Zeile einfügen.
 
+### Version 1.9.5
+
+- Import: Ein Gericht, das am Namen erkannt wird, behält seine Schreibweise. Vorher hat zum Beispiel „brotzeit“ im Import das Gericht „Brotzeit“ umbenannt.
+
 ### Version 1.9.4
 
 - Woche füllen: Lehnt Home Assistant das Anlegen ab, kommt jetzt eine Meldung. Schon angelegte Abende lassen sich mit „Entfernen“ wieder löschen.

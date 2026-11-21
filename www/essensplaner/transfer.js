@@ -164,7 +164,8 @@
           }
           const before = recipeFields(target);
           const merged = Object.assign({}, before, n.f);
-          const renamed = n.name !== target.name;
+          // Am Namen erkannt heißt: gleicher Name, nur vielleicht anders geschrieben. Umbenannt wird nur über die ID.
+          const renamed = matchedBy === 'id' && n.name !== target.name;
           if (canon(merged) === canon(before) && !renamed) { items.push({ status: 'same', name: target.name, uid: target.uid, matchedBy: matchedBy }); return; }
           const raw = Object.assign({}, target.legacy ? {} : target.raw, { v: 1 }, merged);
           items.push({ status: 'update', name: n.name, oldName: target.name, uid: target.uid, rename: renamed, raw: raw, matchedBy: matchedBy, warns: n.warns });

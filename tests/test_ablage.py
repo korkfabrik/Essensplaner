@@ -47,5 +47,4 @@ with start() as T:
     ok('Entfernt, Leiste weg',not J("!!document.querySelector('.abl:not(.empty)')"))
     J("document.querySelector('#toast button').click()"); pg.wait_for_timeout(900)
     ok('Rückgängig stellt wieder her',J("document.querySelectorAll('.abl-chip:not(.add)').length")==1)
-    # 7) Einkaufsliste lässt Ablage und Eingekauftes aus
     ok('Keine JS-Fehler',not errs,errs[:5])

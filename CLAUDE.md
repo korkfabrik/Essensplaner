@@ -74,7 +74,7 @@ python3 tests/run_all.py
 - `test_csp_echt.py` braucht aiohttp und Port 8765.
 - Neue Funktion = neuer Test nach dem Muster der vorhandenen.
 
-Was die Tests nicht abdecken: echtes HA (Kalender-UIDs, REST), Tastatur auf dem Handy, echtes Wischen, Bring.
+Was die Tests nicht abdecken: echtes HA (Kalender-UIDs, REST), Tastatur auf dem Handy, echtes Wischen, Bring, Offline-Stand.
 
 ## Ausrollen
 
