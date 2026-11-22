@@ -46,7 +46,7 @@ Der Nutzer liest Code gut, programmiert aber selbst wenig. Er testet auf einem P
 ## Datenmodell in Home Assistant
 
 - **Rezepte:** Local To-do (Standard `todo.gerichte`). Titel = Name, Beschreibung = JSON `{v, kategorie, kueche, aufwand 1-3, portionen, dauer_min, zutaten:[{name, menge, einheit}], tags, bewertung, favorit, notiz, rezept_url, erstellt}`.
-- **Plan:** Local Calendar (Standard `calendar.essensplan`). Titel = Gerichtname, Beschreibung = JSON `{v:1, gericht_uid, slot, status:'geplant'|'gekocht', portionen, notiz, eingekauft?, auto?}`. `gericht_uid` fehlt bei freien Einträgen. `auto` = Lauf-ID von "Woche füllen" (für Rückgängig).
+- **Plan:** Local Calendar (Standard `calendar.essensplan`). Titel = Gerichtname, Beschreibung = JSON `{v:1, gericht_uid, slot, status:'geplant'|'gekocht', portionen, notiz, eingekauft?, auto?, reste?}`. `gericht_uid` fehlt bei freien Einträgen. `auto` = Lauf-ID von "Woche füllen" (für Rückgängig). `reste` = Reste-Eintrag, zählt nicht als gekocht (Auswertung, zuletzt gekocht).
 - **Gemeinsame Config:** Eintrag `config` in `todo.essensplaner_config`, JSON. Wichtige Schlüssel: `kategorien`, `kuechen`, `einheiten`, `slots` (Mahlzeiten mit Zeiten und `aktiv`), `standard_portionen`, `vorrat_nie`, `vorrat_opt` (Grundvorrat), `ablage` (`[{id, name, gericht_uid, portionen, eingekauft, notiz}]`), `frei_ignoriert` (kleingeschriebene Namen). Schreiben nur über `patchConfig(fn, quiet)`, das serialisiert.
 - **Einkaufsliste:** beliebige HA-To-do-Liste (z. B. eine Bring-Liste), Einträge per `todo.add_item`.
 - **Pro Gerät (localStorage):** `essensplaner_settings` (Entitäten), `essensplaner_auth` (OAuth-Token), `essensplaner_theme`, `essensplaner_accent`, `essensplaner_font`.
@@ -84,6 +84,7 @@ Was die Tests nicht abdecken: echtes HA (Kalender-UIDs, REST), Tastatur auf dem 
 
 ## Offene Ideen
 
-Assist-Sprachabfrage ("Was gibt's heute?"), Erinnerung am Vortag, Dashboard-Kachel, Reste einplanen, Bewertung nach dem Kochen, Offline weiterarbeiten.
+Assist-Sprachabfrage ("Was gibt's heute?"), Erinnerung am Vortag, Dashboard-Kachel, Offline weiterarbeiten.
+Erledigt in 1.9.6: Bewertung nach dem Kochen und Reste einplanen (Popup `#rate` nach dem Abhaken, 8 Sekunden).
 Kippbare Entscheidungen: Standard-Portionen beim Planen statt Rezept-Portionen, Ansicht startet immer mit "5 Tage".
 Auf echtem HA noch ungeprüft: "Woche füllen" (1.8.x), freie Einträge (1.9.x).

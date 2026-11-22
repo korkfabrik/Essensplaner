@@ -476,6 +476,7 @@
       portionen: +meta.portionen || 0,
       notiz: meta.notiz || '',
       eingekauft: !!meta.eingekauft,
+      reste: !!meta.reste,
       meta: meta
     };
   }
@@ -493,7 +494,7 @@
     const m = {};
     const t = ymd(new Date());
     S.events.forEach((e) => {
-      if (e.status !== 'gekocht' || !e.gericht_uid || e.date > t) return;
+      if (e.status !== 'gekocht' || !e.gericht_uid || e.reste || e.date > t) return;
       if (!m[e.gericht_uid] || m[e.gericht_uid] < e.date) m[e.gericht_uid] = e.date;
     });
     return m;
@@ -501,7 +502,7 @@
   function countMap(from, to) {
     const m = {};
     S.events.forEach((e) => {
-      if (e.status !== 'gekocht' || !e.gericht_uid) return;
+      if (e.status !== 'gekocht' || !e.gericht_uid || e.reste) return;
       if ((from && e.date < from) || (to && e.date > to)) return;
       m[e.gericht_uid] = (m[e.gericht_uid] || 0) + 1;
     });
@@ -751,6 +752,7 @@
     const port = ev.portionen || (r && r.portionen);
     if (port) meta.push('<span>' + port + ' Portionen</span>');
     if (!r) meta.unshift('<span>Freier Eintrag</span>');
+    if (ev.reste) meta.unshift('<span class="restbadge">Reste</span>');
     let zut = '';
     if (full && r && r.zutaten.length) {
       const names = r.zutaten.map((z) => z.name);
@@ -980,7 +982,7 @@
     const days = S.stats.days;
     const today = ymd(new Date());
     const from = ymd(addDays(new Date(), -days));
-    const cooked = S.events.filter((e) => e.status === 'gekocht' && e.date >= from && e.date <= today);
+    const cooked = S.events.filter((e) => e.status === 'gekocht' && !e.reste && e.date >= from && e.date <= today);
     const lm = lastMap();
     const groups = {};
     cooked.forEach((e) => {
@@ -1076,6 +1078,7 @@
     if (!needOnline()) return false;
     const meta = { v: 1, gericht_uid: o.gericht_uid || null, slot: o.slot, status: o.status || 'geplant', portionen: o.portionen || S.config.standard_portionen, notiz: o.notiz || '' };
     if (o.eingekauft) meta.eingekauft = true;
+    if (o.reste) meta.reste = true;
     await writeEvent({ date: o.date, slot: o.slot, name: o.name, meta: meta });
     await loadEvents();
     render();
@@ -1200,6 +1203,7 @@
       await updateEntry(ev, { status: next });
       await loadEvents();
       render();
+      if (next === 'gekocht' && !ev.reste) { showRating(recipeById(ev.gericht_uid), ev); return; }
       toast(next === 'gekocht' ? 'Als gekocht markiert' : 'Wieder auf geplant gesetzt', {
         action: 'Rückgängig',
         onAction: () => { if (!S.busy) { S.busy = true; toggleCooked(uid).then(() => { S.busy = false; }); } }
@@ -1210,6 +1214,144 @@
       try { await loadEvents(); } catch (e2) { /* ignorieren */ }
       render();
     }
+  }
+
+  /* ---------- Bewertung nach dem Kochen ----------
+     Popup über der Navigation, 8 Sekunden lang: 1 bis 5 Sterne und Rückgängig. Gespeichert wird im Rezept (bewertung). */
+  const RATE_MS = 8000;
+  let rateTimer = null;
+  function hideRating() {
+    clearTimeout(rateTimer);
+    const box = $('#rate');
+    if (!box || box.hidden) return;
+    box.hidden = true;
+    box.className = '';
+    box.textContent = '';
+  }
+  function showRating(r, ev) {
+    const evUid = ev.uid;
+    const box = $('#rate');
+    if (!box) return;
+    clearTimeout(toastTimer);
+    $('#toast').className = '';
+    box.textContent = '';
+    const head = document.createElement('div');
+    head.className = 'rate-h';
+    const title = document.createElement('b');
+    title.textContent = r ? r.name : entryName(ev);
+    const sub = document.createElement('span');
+    sub.textContent = r ? 'Gekocht. Wie war es?' : 'Gekocht';
+    head.appendChild(title);
+    head.appendChild(sub);
+    const undo = document.createElement('button');
+    undo.type = 'button';
+    undo.className = 'rate-undo';
+    undo.dataset.a = 'rateundo';
+    undo.dataset.uid = evUid;
+    undo.textContent = 'Rückgängig';
+    const top = document.createElement('div');
+    top.className = 'rate-top';
+    top.appendChild(head);
+    top.appendChild(undo);
+    const stars = document.createElement('div');
+    stars.className = 'rate-stars';
+    stars.setAttribute('role', 'group');
+    stars.setAttribute('aria-label', 'Bewertung');
+    for (let n = 1; r && n <= 5; n++) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'rate-star' + (n <= r.bewertung ? ' on' : '');
+      b.dataset.a = 'rate';
+      b.dataset.uid = r.uid;
+      b.dataset.n = String(n);
+      b.setAttribute('aria-label', n + ' von 5 Sternen');
+      b.setAttribute('aria-pressed', String(n === r.bewertung));
+      b.innerHTML = ic('star', 30);
+      stars.appendChild(b);
+    }
+    const rs = restDefault(ev);
+    const rest = document.createElement('div');
+    rest.className = 'rate-rest';
+    const rb = document.createElement('button');
+    rb.type = 'button';
+    rb.className = 'rate-restbtn';
+    rb.dataset.a = 'restplan';
+    rb.dataset.uid = evUid;
+    rb.innerHTML = ic('plus', 16);
+    rb.appendChild(document.createTextNode('Reste ' + (rs.date === ymd(addDays(startOfToday(), 1)) ? 'morgen' : dayLabel(rs.date)) + ' ' + slotOf(rs.slot).label));
+    const rp = document.createElement('button');
+    rp.type = 'button';
+    rp.className = 'rate-restother';
+    rp.dataset.a = 'restpick';
+    rp.dataset.uid = evUid;
+    rp.textContent = 'Anderer Tag';
+    rest.appendChild(rb);
+    rest.appendChild(rp);
+    box.appendChild(top);
+    if (r) box.appendChild(stars);
+    box.appendChild(rest);
+    box.hidden = false;
+    box.className = 'show';
+    clearTimeout(rateTimer);
+    rateTimer = setTimeout(hideRating, RATE_MS);
+  }
+  async function rateRecipe(uid, n) {
+    hideRating();
+    const r = recipeById(uid);
+    if (!r || !(n >= 1 && n <= 5) || !needOnline()) return;
+    // Alte Einträge ohne Rezeptformat: vorhandenen Text als Notiz behalten
+    const raw = Object.assign({}, r.legacy ? { notiz: r.notiz } : r.raw, { v: 1, bewertung: n });
+    await writeRecipe({ uid: r.uid, name: r.name, raw: raw });
+    await reloadRecipes();
+    softRender();
+    toast('Bewertet: ' + '★'.repeat(n) + '☆'.repeat(5 - n));
+  }
+
+  /* ---------- Reste einplanen ----------
+     Standard: am Tag nach dem Kochen mittags. Der Eintrag ist mit dem Gericht verknüpft, gilt als eingekauft
+     und zählt nicht als gekocht (reste: true). */
+  function restSlotKey() {
+    const m = S.config.slots.find((s) => s.key === 'mittag');
+    if (m) return m.key;
+    const sorted = S.config.slots.slice().sort((a, b) => String(a.start).localeCompare(String(b.start)));
+    return (sorted[0] || { key: firstActiveSlot() }).key;
+  }
+  function restDefault(ev) {
+    const base = ev && ev.date && ev.date > ymd(new Date()) ? parseYmd(ev.date) : startOfToday();
+    return { date: ymd(addDays(base, 1)), slot: restSlotKey() };
+  }
+  async function planLeftovers(uid, date, slot) {
+    hideRating();
+    const ev = S.events.find((e) => e.uid === uid);
+    if (!ev || !date || !slot || !needOnline()) return;
+    const ok = await createEntry({ date: date, slot: slot, name: entryName(ev), gericht_uid: ev.gericht_uid, portionen: ev.portionen, status: 'geplant', eingekauft: true, reste: true });
+    if (!ok) return;
+    closeSheet();
+    render();
+    const dt = parseYmd(date);
+    toast('Reste eingeplant: ' + dayLabel(date) + ', ' + dt.getDate() + '. ' + MON_S[dt.getMonth()] + ', ' + slotOf(slot).label);
+  }
+  function openRestPick(uid) {
+    hideRating();
+    const ev = S.events.find((e) => e.uid === uid);
+    if (!ev || !needOnline()) return;
+    S.sheet = { type: 'restpick', uid: uid };
+    const def = restDefault(ev);
+    // Mittag immer anbieten, auch wenn die Mahlzeit sonst nicht aktiv ist
+    const slots = S.config.slots.filter((s) => s.aktiv || s.key === def.slot).sort((a, b) => slotIdx(a.key) - slotIdx(b.key));
+    const rows = [];
+    for (let i = 0; i < 5; i++) {
+      const d = ymd(addDays(startOfToday(), i));
+      const dt = parseYmd(d);
+      const text = '<span class="menu-text"><span class="menu-title">' + esc(dayLabel(d)) + '</span><span class="menu-summary">' +
+        esc((dayLabel(d) === WD_LONG[dt.getDay()] ? '' : WD_LONG[dt.getDay()] + ', ') + dt.getDate() + '. ' + MON[dt.getMonth()]) + '</span></span>';
+      rows.push('<div class="menu-row move-row">' + text + '<span class="move-slots">' + slots.map((sl) => {
+        const tk = S.events.some((x) => x.date === d && x.slot === sl.key);
+        const isDef = d === def.date && sl.key === def.slot;
+        return '<button class="mvslot press' + (tk ? ' taken' : '') + (isDef ? ' isdef' : '') + '" type="button" data-a="restto" data-uid="' + esc(uid) + '" data-d="' + d + '" data-slot="' + esc(sl.key) + '">' + esc(sl.label) + (tk ? '<small>belegt</small>' : '') + '</button>';
+      }).join('') + '</span></div>');
+    }
+    showSheet('Reste von „' + entryName(ev) + '“', '<div class="menu-group" style="margin:0">' + rows.join('') + '</div>');
   }
 
   /* Portionen: Knöpfe 1 bis 4 und dahinter ein kleines Feld für andere Zahlen */
@@ -1962,6 +2104,11 @@
       toast(entryName(ev) + ' liegt jetzt ohne Tag in der Ablage');
     }),
     cook: (el) => toggleCooked(el.dataset.uid),
+    rate: (el) => rateRecipe(el.dataset.uid, +el.dataset.n),
+    rateundo: (el) => { hideRating(); return toggleCooked(el.dataset.uid); },
+    restplan: (el) => { const ev = S.events.find((e) => e.uid === el.dataset.uid); const d = restDefault(ev); return planLeftovers(el.dataset.uid, d.date, d.slot); },
+    restpick: (el) => openRestPick(el.dataset.uid),
+    restto: (el) => planLeftovers(el.dataset.uid, el.dataset.d, el.dataset.slot),
     buy: (el) => toggleBought(el.dataset.uid),
     entry: (el) => openEntry(el.dataset.uid),
     entrytorecipe: (el) => {
@@ -2137,7 +2284,7 @@
   Object.assign(A, SET.actions);
 
   /* Schreibende Aktionen laufen nacheinander, ein Doppeltipp löst nichts doppelt aus. */
-  const MUTATING = ['fillok', 'freelink', 'freeign', 'freeunign', 'cook', 'buy', 'pickablage', 'abto', 'abother', 'abdel', 'moveablage', 'entrycook', 'pickrecipe', 'pickfree', 'entrysave', 'entrydel', 'planok', 'saverecipe', 'delrecipe', 'shopsend', 'createent', 'cfgadd', 'cfgdel', 'moveto', 'moveother', 'impapply'];
+  const MUTATING = ['rate', 'rateundo', 'restplan', 'restto', 'fillok', 'freelink', 'freeign', 'freeunign', 'cook', 'buy', 'pickablage', 'abto', 'abother', 'abdel', 'moveablage', 'entrycook', 'pickrecipe', 'pickfree', 'entrysave', 'entrydel', 'planok', 'saverecipe', 'delrecipe', 'shopsend', 'createent', 'cfgadd', 'cfgdel', 'moveto', 'moveother', 'impapply'];
   document.addEventListener('click', (e) => {
     const el = e.target.closest('[data-a]');
     if (!el || el.disabled) return;

@@ -125,6 +125,11 @@ Aufbau wie in der Merker-App: oben eine Statuskarte (Verbindung, Home-Assistant-
 
 Neueste Version oben. Bei jeder Änderung einen neuen Abschnitt "### Version x.y.z" direkt unter dieser Zeile einfügen.
 
+### Version 1.9.6
+
+- Nach dem Abhaken mit der Kochmütze erscheint 8 Sekunden lang ein Fenster: 1 bis 5 Sterne für das Gericht und Rückgängig. Die Bewertung steht beim Rezept.
+- Reste einplanen: Im selben Fenster legt „Reste morgen Mittag“ einen Eintrag für den nächsten Mittag an. „Anderer Tag“ bietet die nächsten Tage mit Mittag und Abend zur Auswahl. Reste gelten als eingekauft und zählen in der Auswertung nicht als gekocht.
+
 ### Version 1.9.5
 
 - Import: Ein Gericht, das am Namen erkannt wird, behält seine Schreibweise. Vorher hat zum Beispiel „brotzeit“ im Import das Gericht „Brotzeit“ umbenannt.
